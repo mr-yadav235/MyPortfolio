@@ -1,3 +1,22 @@
-<p>
-  experience works!
-</p>
+<div class="card">
+  <div class="card-content">
+    <div class="row">
+      <div class="col s12 m2"><a href="http://synoris.com" target="_blank"><img alt="Synoris logo" src="http://www.synoris.com/wp-content/uploads/2016/01/logo.png" class="responsive-img center-block"></a></div>
+      <div class="col s12 m10">
+        <p><span class="card-title"><a href="http://synoris.com" target="_blank" class="teal-text hoverline">Synoris Technologies</a></span></p>
+      </div>
+    </div>
+    <div class="role brown-text">{{experience.role}}</div>
+    <p><em class="grey-text">{{experience.overview}}</em></p>
+    <h6> Product</h6>
+    <ul>
+      <li>{{experience.product}}</li>
+    </ul>
+    <h6>Accomplishments</h6>
+    <ul>
+      <li>{{experience.accomplishments}}</li>
+      
+    </ul>
+  </div>
+  <div class="card-action"><span>{{experience.date}}  |  {{experience.location}}</span></div>
+</div>
