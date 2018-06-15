@@ -1,7 +1,6 @@
 .jumbotron{
     background-image:url(https://i.ytimg.com/vi/hPCotoawhk0/maxresdefault.jpg);
     background-size: cover;
-    opacity: unset;
 }
 a{
     margin-right: 3px;
