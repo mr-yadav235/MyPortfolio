@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -19,32 +18,32 @@ const appRoutes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
-    data: { title: 'Create Book' }
+    data: { title: 'About' }
   },
   {
     path: 'experience',
     component: ExperienceComponent,
-    data: { title: 'Home' }
+    data: { title: 'Experience' }
   },
   {
     path: 'projects',
     component: ProjectsComponent,
-    data: { title: 'Admin Panel' }
+    data: { title: 'Projects' }
   },
   {
     path: 'skills',
     component: SkillsComponent,
-    data: { title: 'Book List' }
+    data: { title: 'Skills' }
   },
   {
     path: 'education',
     component: EducationComponent,
-    data: { title: 'Company List' }
+    data: { title: 'Education' }
   },
   {
     path: 'contact',
     component: ContactComponent,
-    data: { title: 'Login' }
+    data: { title: 'Contact' }
   },
  
   { path: '',
@@ -70,9 +69,6 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({
-        apiKey:'AIzaSyDGPx8eImmr4FyTwJpB1PSzYjQRYN13pj8'
-    }),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
