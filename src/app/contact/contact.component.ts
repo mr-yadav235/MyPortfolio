@@ -1,7 +1,4 @@
 import { Component,ViewChild  } from '@angular/core';
-import { } from '@types/googlemaps';
-
-declare var MarkerClusterer: any;
 
 
 @Component({
@@ -11,5 +8,7 @@ declare var MarkerClusterer: any;
 
 })
 export class ContactComponent {
-  
+  lat: number = 19.207233;
+  lng: number =  72.976625;
+  zoom: number = 10;
 }

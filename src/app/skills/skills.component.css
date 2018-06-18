@@ -91,16 +91,17 @@ body {
     color: white;
   }
   
-  .html {width: 80%; background-color: #4CAF50;}
-  .css {width: 40%; background-color: #2196F3;}
-  .js {width: 65%; background-color: #f44336;}
-  .angular{width: 85%; background-color: #f44336;}
-  .node {width: 60%; background-color: #808080;}
-  .express {width: 60%; background-color: #4CAF50;}
-  .spring {width: 65%; background-color: #f44336;}
-  .react {width: 50%; background-color: #808080;}
-  .ts {width: 75%; background-color: #4CAF50;}
-  .css {width: 40%; background-color: #2196F3;}
-  .mongo {width: 65%; background-color: #f44336;}
-  .mysql {width: 60%; background-color: #808080;}
-  .msql {width: 60%; background-color: #4CAF50;}
+  .java {width: 50%; background-color: #4CAF50;}
+  .html {width: 60%; background-color: #4CAF50;}
+  .css {width: 30%; background-color: #2196F3;}
+  .js {width: 50%; background-color: #f44336;}
+  .angular{width: 60%; background-color: #f44336;}
+  .node {width: 40%; background-color: #808080;}
+  .express {width: 45%; background-color: #4CAF50;}
+  .spring {width: 50%; background-color: #f44336;}
+  .react {width: 20%; background-color: #808080;}
+  .ts {width: 55%; background-color: #4CAF50;}
+  .css {width: 20%; background-color: #2196F3;}
+  .mongo {width: 30%; background-color: #f44336;}
+  .mysql {width: 40%; background-color: #808080;}
+  .msql {width: 40%; background-color: #4CAF50;}
