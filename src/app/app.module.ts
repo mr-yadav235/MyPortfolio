@@ -71,7 +71,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE'
+      apiKey: '*********************'
     }),
     RouterModule.forRoot(
       appRoutes,
