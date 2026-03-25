@@ -1,36 +1,37 @@
-{{- if and .Values.api.enabled .Values.api.ingress.enabled }}
-{{- /* Simple Prefix path only (e.g. /management). No rewrite — matches Gravitee AM Jetty context. */ -}}
-{{- /* For a different public prefix on same host as APIM, add a separate Ingress or custom annotations. */ -}}
+{{- if and .Values.gateway.enabled .Values.gateway.ingress.enabled }}
+{{- /* Single Prefix rule only (default /auth). Same idea as a plain official ingress path+Prefix: no regex, no rewrite-target. */ -}}
+{{- $raw := .Values.gateway.ingress.path | default "/auth" | trimSuffix "/" -}}
+{{- $path := ternary "/" $raw (or (eq $raw "") (eq $raw "/")) -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "gravitee-am.fullname" . }}-{{ .Values.api.name }}
+  name: {{ include "gravitee-am.fullname" . }}-{{ .Values.gateway.name }}
   labels:
     {{- include "gravitee-am.labels" . | nindent 4 }}
-    app.kubernetes.io/name: {{ .Values.api.name }}
+    app.kubernetes.io/name: {{ .Values.gateway.name }}
   annotations:
-    {{- range $key, $value := .Values.api.ingress.annotations }}
+    {{- range $key, $value := .Values.gateway.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
-  {{- with .Values.api.ingress.ingressClassName }}
+  {{- with .Values.gateway.ingress.ingressClassName }}
   ingressClassName: {{ . | quote }}
   {{- end }}
-  {{- if .Values.api.ingress.tls }}
+  {{- if .Values.gateway.ingress.tls }}
   tls:
-    {{- toYaml .Values.api.ingress.tls | nindent 4 }}
+    {{- toYaml .Values.gateway.ingress.tls | nindent 4 }}
   {{- end }}
   rules:
-    {{- range .Values.api.ingress.hosts }}
+    {{- range .Values.gateway.ingress.hosts }}
     - host: {{ . }}
       http:
         paths:
-          - path: {{ $.Values.api.ingress.path | default "/management" | quote }}
+          - path: {{ $path | quote }}
             pathType: Prefix
             backend:
               service:
-                name: {{ include "gravitee-am.fullname" $ }}-{{ $.Values.api.name }}
+                name: {{ include "gravitee-am.fullname" $ }}-{{ $.Values.gateway.name }}
                 port:
-                  number: {{ $.Values.api.service.externalPort }}
+                  number: {{ $.Values.gateway.service.externalPort }}
     {{- end }}
 {{- end }}
